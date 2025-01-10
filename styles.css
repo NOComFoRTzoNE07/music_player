@@ -41,9 +41,11 @@ body {
 }
 
 .player-container {
-    width: 90%;
+    width: 95%;
     max-width: 600px;
-    min-width: 280px;
+    min-width: auto;
+    margin: 20px auto;
+    padding: 15px;
     background: rgba(0, 0, 0, 0.6);
     backdrop-filter: blur(10px);
     border-radius: 20px;
@@ -51,17 +53,16 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    padding: 20px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
 .visualization {
-    height: 150px;
+    height: 120px;
     background: rgba(0, 0, 0, 0.3);
     border-radius: 15px;
     position: relative;
     overflow: hidden;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 
 .bars-container {
@@ -108,13 +109,13 @@ body {
     display: flex;
     align-items: center;
     gap: 10px;
-    margin-bottom: 30px;
-    padding: 0 20px;
+    margin: 15px 0;
+    padding: 0 5px;
 }
 
 .progress-bar {
     flex: 1;
-    height: 6px;
+    height: 8px;
     background: rgba(255, 255, 255, 0.2);
     border-radius: 3px;
     cursor: pointer;
@@ -173,67 +174,9 @@ body {
 /* Add media queries for different screen sizes */
 @media screen and (max-width: 480px) {
     .player-container {
-        width: 95%;
-        padding: 15px;
-    }
-
-    .visualization {
-        height: 120px;
-        margin-bottom: 20px;
-    }
-
-    .bars-container {
-        gap: 3px;
+        width: 98%;
         padding: 10px;
-    }
-
-    .bar {
-        max-width: 20px;
-    }
-
-    .progress-container {
-        padding: 0 10px;
-    }
-
-    .control-btn {
-        font-size: 20px;
-    }
-
-    .play-btn {
-        width: 50px;
-        height: 50px;
-    }
-
-    .volume-control input {
-        width: 80px;
-    }
-
-    .controls {
-        padding: 0 5px;
-        gap: 10px;
-    }
-
-    .play-btn {
-        min-width: 50px;
-        height: 50px;
-        font-size: 18px;
-    }
-
-    .volume-control {
-        max-width: 150px;
-        margin-top: 20px;
-    }
-
-    .volume-control input {
-        width: 100%;
-        max-width: 120px;
-    }
-}
-
-/* Add landscape orientation support */
-@media screen and (max-height: 600px) and (orientation: landscape) {
-    .player-container {
-        padding: 15px;
+        margin: 10px auto;
     }
 
     .visualization {
@@ -242,10 +185,86 @@ body {
     }
 
     .song-info {
+        padding: 0 5px;
         margin-bottom: 15px;
     }
 
-    .progress-container {
-        margin-bottom: 15px;
+    .song-title {
+        font-size: 18px;
+    }
+
+    .song-artist {
+        font-size: 14px;
+    }
+
+    .controls {
+        flex-direction: row;
+        justify-content: space-evenly;
+        padding: 0;
+        gap: 8px;
+    }
+
+    .control-btn {
+        padding: 8px;
+    }
+
+    .volume-control {
+        flex-direction: row;
+        width: 100%;
+        max-width: none;
+        padding: 0 10px;
+        margin-top: 15px;
+        gap: 8px;
+    }
+
+    .volume-control input {
+        flex: 1;
+        min-width: 0;
+        max-width: none;
+    }
+}
+
+/* Additional small screen adjustments */
+@media screen and (max-width: 320px) {
+    .player-container {
+        padding: 8px;
+    }
+
+    .controls {
+        gap: 5px;
+    }
+
+    .play-btn {
+        min-width: 45px;
+        height: 45px;
+    }
+
+    .control-btn {
+        font-size: 16px;
+    }
+}
+
+/* Landscape mode optimization */
+@media screen and (max-height: 500px) and (orientation: landscape) {
+    .player-container {
+        padding: 10px;
+        margin: 5px auto;
+    }
+
+    .visualization {
+        height: 80px;
+        margin-bottom: 10px;
+    }
+
+    .song-info, .progress-container {
+        margin-bottom: 10px;
+    }
+
+    .controls {
+        margin-top: 5px;
+    }
+
+    .volume-control {
+        margin-top: 10px;
     }
 }
