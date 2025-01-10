@@ -133,7 +133,8 @@ body {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    padding: 0 20px;
+    padding: 0 10px;
+    width: 100%;
 }
 
 .control-btn {
@@ -145,7 +146,7 @@ body {
 }
 
 .play-btn {
-    width: 60px;
+    min-width: 60px;
     height: 60px;
     border-radius: 50%;
     background: var(--gradient-1);
@@ -156,13 +157,12 @@ body {
 }
 
 .volume-control {
-    margin-left: 0;
-    width: 100%;
-    justify-content: center;
-    margin-top: 15px;
     display: flex;
     align-items: center;
     gap: 10px;
+    width: 100%;
+    max-width: 200px;
+    margin: 15px auto 0;
 }
 
 .volume-control input {
@@ -206,6 +206,27 @@ body {
 
     .volume-control input {
         width: 80px;
+    }
+
+    .controls {
+        padding: 0 5px;
+        gap: 10px;
+    }
+
+    .play-btn {
+        min-width: 50px;
+        height: 50px;
+        font-size: 18px;
+    }
+
+    .volume-control {
+        max-width: 150px;
+        margin-top: 20px;
+    }
+
+    .volume-control input {
+        width: 100%;
+        max-width: 120px;
     }
 }
 
