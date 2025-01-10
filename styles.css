@@ -41,8 +41,9 @@ body {
 }
 
 .player-container {
-    width: 70%;
+    width: 90%;
     max-width: 600px;
+    min-width: 280px;
     background: rgba(0, 0, 0, 0.6);
     backdrop-filter: blur(10px);
     border-radius: 20px;
@@ -50,12 +51,12 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    padding: 30px;
+    padding: 20px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
 .visualization {
-    height: 200px;
+    height: 150px;
     background: rgba(0, 0, 0, 0.3);
     border-radius: 15px;
     position: relative;
@@ -83,18 +84,24 @@ body {
 .song-info {
     text-align: left;
     margin-bottom: 30px;
-    padding-left: 20px;
+    padding-left: 10px;
 }
 
 .song-title {
-    font-size: 24px;
+    font-size: 20px;
     font-weight: bold;
     margin-bottom: 5px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .song-artist {
-    font-size: 18px;
+    font-size: 16px;
     color: rgba(255, 255, 255, 0.8);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .progress-container {
@@ -122,7 +129,9 @@ body {
 
 .controls {
     display: flex;
-    gap: 20px;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
     align-items: center;
     padding: 0 20px;
 }
@@ -147,7 +156,10 @@ body {
 }
 
 .volume-control {
-    margin-left: auto;
+    margin-left: 0;
+    width: 100%;
+    justify-content: center;
+    margin-top: 15px;
     display: flex;
     align-items: center;
     gap: 10px;
@@ -156,4 +168,63 @@ body {
 .volume-control input {
     width: 100px;
     accent-color: var(--gradient-1);
+}
+
+/* Add media queries for different screen sizes */
+@media screen and (max-width: 480px) {
+    .player-container {
+        width: 95%;
+        padding: 15px;
+    }
+
+    .visualization {
+        height: 120px;
+        margin-bottom: 20px;
+    }
+
+    .bars-container {
+        gap: 3px;
+        padding: 10px;
+    }
+
+    .bar {
+        max-width: 20px;
+    }
+
+    .progress-container {
+        padding: 0 10px;
+    }
+
+    .control-btn {
+        font-size: 20px;
+    }
+
+    .play-btn {
+        width: 50px;
+        height: 50px;
+    }
+
+    .volume-control input {
+        width: 80px;
+    }
+}
+
+/* Add landscape orientation support */
+@media screen and (max-height: 600px) and (orientation: landscape) {
+    .player-container {
+        padding: 15px;
+    }
+
+    .visualization {
+        height: 100px;
+        margin-bottom: 15px;
+    }
+
+    .song-info {
+        margin-bottom: 15px;
+    }
+
+    .progress-container {
+        margin-bottom: 15px;
+    }
 }
